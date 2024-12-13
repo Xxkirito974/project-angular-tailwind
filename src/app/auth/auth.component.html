@@ -1,0 +1,41 @@
+<div class="auth-container">
+  <h1>{{ isLoginMode ? 'Connexion' : 'Inscription' }}</h1>
+
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input
+        type="email"
+        id="email"
+        [(ngModel)]="email"
+        name="email"
+        class="form-control"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="password">Mot de passe</label>
+      <input
+        type="password"
+        id="password"
+        [(ngModel)]="password"
+        name="password"
+        class="form-control"
+        required
+      />
+    </div>
+
+    <p class="error-message" *ngIf="errorMessage">{{ errorMessage }}</p>
+
+    <button type="submit" class="btn btn-primary">
+      {{ isLoginMode ? 'Se connecter' : 'S\'inscrire' }}
+    </button>
+  </form>
+
+  <p>
+    <a href="#" (click)="switchMode()">
+      {{ isLoginMode ? 'Créer un compte' : 'Vous avez déjà un compte ?' }}
+    </a>
+  </p>
+</div>

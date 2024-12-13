@@ -1,0 +1,33 @@
+<div class="p-4 max-w-md mx-auto">
+    <h1 class="text-2xl font-bold mb-4">Éditeur de données</h1>
+    <form (ngSubmit)="onSubmit(form.value)" #form="ngForm">
+      <div class="mb-4">
+        <label for="name" class="block text-gray-700">Nom</label>
+        <input
+          type="text"
+          id="name"
+          class="border border-gray-300 rounded-md w-full p-2"
+          [(ngModel)]="data.name"
+          name="name"
+          required
+        />
+      </div>
+      <div class="mb-4">
+        <label for="description" class="block text-gray-700">Description</label>
+        <textarea
+          id="description"
+          class="border border-gray-300 rounded-md w-full p-2"
+          [(ngModel)]="data.description"
+          name="description"
+          required
+        ></textarea>
+      </div>
+      <button
+        type="submit"
+        class="bg-green-500 text-white rounded-md px-4 py-2 hover:bg-green-600"
+      >
+        Enregistrer
+      </button>
+    </form>
+  </div>
+  
